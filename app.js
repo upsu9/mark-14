@@ -33,20 +33,24 @@ function check(pastPrice, stocks, currPrice) {
 }
 
 function calculator(inputPrice, stocksQuantity, currentPrice) {
-    if (inputPrice < currentPrice) {
-        var profit = (currentPrice - inputPrice) * stocksQuantity;
-        var profitPercentage = (profit / inputPrice) * 100
+
+var inputValue = inputPrice*stocksQuantity;
+var currentValue = currentPrice*stocksQuantity;
+
+    if (inputValue < currentValue) {
+        var profit = (currentValue - inputValue);
+        var profitPercentage = (profit / inputValue) * 100
         var proPer = profitPercentage.toFixed(2)
         showmsg(`You have made profit of Rs. ${profit} and  percentage ${proPer} % .`)
     } else {
-        if (inputPrice > currentPrice) {
-            var loss = (inputPrice - currentPrice) * stocksQuantity;
-            var lossPercentage = (loss / inputPrice) * 100
+        if (inputValue > currentValue) {
+            var loss = (inputValue - currentValue);
+            var lossPercentage = (loss / inputValue) * 100
             var lossPer = lossPercentage.toFixed(2)
             showmsg(`You have made Rs. ${loss} and  percentage ${lossPer} % .`)
 
         } else {
-            if (inputPrice = currentPrice);
+            if (inputValue = currentValue);
             showmsg(`Have faith, Destiny is all.`)
 
         }
